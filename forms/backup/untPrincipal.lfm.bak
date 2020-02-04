@@ -95,18 +95,21 @@ object frmPrincipal: TfrmPrincipal
       Caption = 'Relatórios'
       object Movimentaes1: TMenuItem
         Caption = 'Movimentações'
+        OnClick = Movimentaes1Click
       end
       object N9: TMenuItem
         Caption = '-'
       end
       object Peasporsetor1: TMenuItem
         Caption = 'Quantidade de Peças x Setor'
+        OnClick = Peasporsetor1Click
       end
       object N4: TMenuItem
         Caption = '-'
       end
       object QuantidadedePeasxSituao1: TMenuItem
         Caption = 'Quantidade de Peças x Situação'
+        OnClick = QuantidadedePeasxSituao1Click
       end
     end
     object Segurana1: TMenuItem
@@ -134,5 +137,54 @@ object frmPrincipal: TfrmPrincipal
         OnClick = Sobre1Click
       end
     end
+  end
+  object UCZEOSConn1: TUCZEOSConn
+    Connection = DM.ZConnection1
+    left = 188
+    top = 112
+  end
+  object UserControl1: TUserControl
+    ApplicationID = 'Lavanderia'
+    ControlRight.MainMenu = MainMenu1
+    User.MenuItem = Cadastrarusurios1
+    UserPasswordChange.MenuItem = Alterarsenha1
+    UsersLogoff.MenuItem = TrocardeUsuario1
+    LogControl.TableLog = 'UCLog'
+    Language = ucPortuguesBr
+    EncryptKey = 0
+    Login.InitialLogin.User = 'admin'
+    Login.InitialLogin.Email = 'usercontrol@usercontrol.net'
+    Login.InitialLogin.Password = 'admin'
+    Login.MaxLoginAttempts = 0
+    ExtraRights = <>
+    TableUsers.FieldUserID = 'UCIdUser'
+    TableUsers.FieldUserName = 'UCUserName'
+    TableUsers.FieldLogin = 'UCLogin'
+    TableUsers.FieldPassword = 'UCPassword'
+    TableUsers.FieldEmail = 'UCEmail'
+    TableUsers.FieldPrivileged = 'UCPrivileged'
+    TableUsers.FieldTypeRec = 'UCTypeRec'
+    TableUsers.FieldProfile = 'UCProfile'
+    TableUsers.FieldKey = 'UCKey'
+    TableUsers.FieldDateExpired = 'UCPASSEXPIRED'
+    TableUsers.FieldUserExpired = 'UCUserExpired'
+    TableUsers.FieldUserDaysSun = 'UCUserDaysSun'
+    TableUsers.FieldUserInative = 'UCInative'
+    TableUsers.TableName = 'UCTabUsers'
+    TableRights.FieldUserID = 'UCIdUser'
+    TableRights.FieldModule = 'UCModule'
+    TableRights.FieldComponentName = 'UCCompName'
+    TableRights.FieldFormName = 'UCFormName'
+    TableRights.FieldKey = 'UCKey'
+    TableRights.TableName = 'UCTabRights'
+    TableUsersLogged.FieldLogonID = 'UCIdLogon'
+    TableUsersLogged.FieldUserID = 'UCIdUser'
+    TableUsersLogged.FieldApplicationID = 'UCApplicationId'
+    TableUsersLogged.FieldMachineName = 'UCMachineName'
+    TableUsersLogged.FieldData = 'UCData'
+    TableUsersLogged.TableName = 'UCTabUsersLogged'
+    DataConnector = UCZEOSConn1
+    left = 188
+    top = 176
   end
 end

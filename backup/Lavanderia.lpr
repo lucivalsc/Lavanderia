@@ -6,7 +6,7 @@ uses {$IFDEF UNIX} {$IFDEF UseCThreads}
   cthreads, {$ENDIF} {$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms,
-  indylaz,
+  indylaz, rxnew,
   zcomponent,
   untDM,
   untPrincipal;

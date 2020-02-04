@@ -5,22 +5,12 @@ unit untPrincipal;
 interface
 
 uses
-   untRelatorioMovimentacao,
-   untRelatorioQuantidadeGeralPecas,
-   untRelatorioQuantidadePecasSetor,
-   untRegistrarOcorrencias,
-   untRelatorioOcorrencias,
-   untSobre,
-   untRegistrarSaidas,
-   untCadastroProdutos,
-   untCadastroFornecedores,
-   untMotivoBaixa,
-   untCadastroArtigos,
-   untCadastroMarca,
-   untLeitos,
-   untQuarto,
-   untUnidadeHospitalar,
-   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus;
+   untRelatorioMovimentacao, untRelatorioQuantidadeGeralPecas,
+			untRelatorioQuantidadePecasSetor, untRegistrarOcorrencias,
+			untRelatorioOcorrencias, untSobre, untRegistrarSaidas, untCadastroProdutos,
+			untCadastroFornecedores, untMotivoBaixa, untCadastroArtigos,
+			untCadastroMarca, untLeitos, untQuarto, untUnidadeHospitalar, Classes,
+			SysUtils, Forms, Controls, Graphics, Dialogs, Menus, UCBase, UCZEOSConn;
 
 type
 
@@ -65,6 +55,8 @@ type
 						Setores2: TMenuItem;
 						Sobre1: TMenuItem;
 						TrocardeUsuario1: TMenuItem;
+						UCZEOSConn1: TUCZEOSConn;
+						UserControl1: TUserControl;
 						procedure Artigos1Click(Sender: TObject);
 						procedure Fornecedor1Click(Sender: TObject);
       procedure Marca2Click(Sender: TObject);

@@ -1020,7 +1020,8 @@ end;
 procedure TfrmCadastroProdutos.edtDescricaoArtigoChange(Sender: TObject);
 begin
 	  BufTableListagem.Filtered   :=  False;
-	  BufTableListagem.Filter     :=  'DS_CADASTRO LIKE ' + QuotedStr(edtDescricaoArtigo.Text + '*');
+	  BufTableListagem.Filter     :=  'DS_CADASTRO = ' + QuotedStr('*' + edtDescricaoArtigo.Text + '*');
+   BufTableListagem.FilterOptions:=[foCaseInsensitive];;
 	  BufTableListagem.Filtered   :=  True;
 
    lblQuantidadeArtigos.Caption:= BufTableListagem.RecordCount.ToString + ' Artigo(s)';

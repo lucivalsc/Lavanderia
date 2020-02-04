@@ -5,19 +5,12 @@ unit untPrincipal;
 interface
 
 uses
-   untRegistrarOcorrencias,
-   untRelatorioOcorrencias,
-   untSobre,
-   untRegistrarSaidas,
-   untCadastroProdutos,
-   untCadastroFornecedores,
-   untMotivoBaixa,
-   untCadastroArtigos,
-   untCadastroMarca,
-   untLeitos,
-   untQuarto,
-   untUnidadeHospitalar,
-   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus;
+   untRelatorioMovimentacao, untRelatorioQuantidadeGeralPecas,
+			untRelatorioQuantidadePecasSetor, untRegistrarOcorrencias,
+			untRelatorioOcorrencias, untSobre, untRegistrarSaidas, untCadastroProdutos,
+			untCadastroFornecedores, untMotivoBaixa, untCadastroArtigos,
+			untCadastroMarca, untLeitos, untQuarto, untUnidadeHospitalar, Classes,
+			SysUtils, Forms, Controls, Graphics, Dialogs, Menus, UCBase, UCZEOSConn;
 
 type
 
@@ -62,13 +55,18 @@ type
 						Setores2: TMenuItem;
 						Sobre1: TMenuItem;
 						TrocardeUsuario1: TMenuItem;
+						UCZEOSConn1: TUCZEOSConn;
+						UserControl1: TUserControl;
 						procedure Artigos1Click(Sender: TObject);
 						procedure Fornecedor1Click(Sender: TObject);
       procedure Marca2Click(Sender: TObject);
       procedure MenuItem1Click(Sender: TObject);
 						procedure MenuItem2Click(Sender: TObject);
 						procedure MotivodaBaixa1Click(Sender: TObject);
+						procedure Movimentaes1Click(Sender: TObject);
+						procedure Peasporsetor1Click(Sender: TObject);
 						procedure Produtos1Click(Sender: TObject);
+						procedure QuantidadedePeasxSituao1Click(Sender: TObject);
 						procedure RegistrarOcorrncias1Click(Sender: TObject);
 						procedure Registrarsada1Click(Sender: TObject);
       procedure Setores1Click(Sender: TObject);
@@ -129,9 +127,24 @@ begin
    AbrirForm(TfrmMotivoBaixa);
 end;
 
+procedure TfrmPrincipal.Movimentaes1Click(Sender: TObject);
+begin
+   AbrirForm(TfrmRelatorioMovimentacao);
+end;
+
+procedure TfrmPrincipal.Peasporsetor1Click(Sender: TObject);
+begin
+   AbrirForm(TfrmRelatorioQuantidadePecasSetor);
+end;
+
 procedure TfrmPrincipal.Produtos1Click(Sender: TObject);
 begin
    AbrirForm(TfrmCadastroProdutos);
+end;
+
+procedure TfrmPrincipal.QuantidadedePeasxSituao1Click(Sender: TObject);
+begin
+   AbrirForm(TfrmRelatorioQuantidadeGeralPecas);
 end;
 
 procedure TfrmPrincipal.RegistrarOcorrncias1Click(Sender: TObject);
