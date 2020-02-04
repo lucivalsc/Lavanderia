@@ -26,7 +26,16 @@
 #*.obj
 #
 
+#Lazarus
+*.lpi
+*.lpr
+*.lps
+*.bak
+*.ppu
+*.ini
+
 # Delphi compiler-generated binaries (safe to delete)
+
 *.exe
 *.dll
 *.bpl
