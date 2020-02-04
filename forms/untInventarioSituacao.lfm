@@ -1,0 +1,59 @@
+object frmInventarioSituacao: TfrmInventarioSituacao
+  Left = 630
+  Height = 231
+  Top = 392
+  Width = 394
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Situação do Inventário'
+  ClientHeight = 231
+  ClientWidth = 394
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  OnClose = FormClose
+  Position = poMainFormCenter
+  LCLVersion = '2.0.4.0'
+  object Button1: TButton
+    Left = 296
+    Height = 25
+    Top = 192
+    Width = 75
+    Caption = 'Ok'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Button2: TButton
+    Left = 191
+    Height = 25
+    Top = 192
+    Width = 99
+    Caption = 'Cancelar'
+    OnClick = Button2Click
+    TabOrder = 1
+  end
+  object RadioGroup1: TRadioGroup
+    Left = 63
+    Height = 137
+    Top = 32
+    Width = 308
+    AutoFill = True
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 119
+    ClientWidth = 304
+    ItemIndex = 0
+    Items.Strings = (
+      'Inventariado'
+      'Não Inventariado'
+      'Todos os registros'
+    )
+    TabOrder = 2
+  end
+end

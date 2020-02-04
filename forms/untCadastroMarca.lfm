@@ -1,0 +1,43 @@
+inherited frmCadastroMarca: TfrmCadastroMarca
+  Left = 569
+  Height = 300
+  Top = 304
+  Width = 500
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Cadastro de Marcas'
+  ClientHeight = 300
+  ClientWidth = 500
+  OnClose = nil
+  OnCreate = FormCreate
+  inherited PageControl1: TPageControl
+    Height = 300
+    Width = 500
+    inherited tabPrincipal: TTabSheet
+      ClientHeight = 272
+      ClientWidth = 492
+      inherited Panel1: TPanel
+        Width = 492
+        ClientWidth = 492
+      end
+      inherited DBGrid1: TDBGrid
+        Height = 183
+        Width = 492
+      end
+      inherited Panel2: TPanel
+        Top = 240
+        Width = 492
+        ClientWidth = 492
+      end
+    end
+    inherited tabEdicao: TTabSheet
+      ClientHeight = 272
+      ClientWidth = 492
+      inherited Panel3: TPanel
+        Top = 240
+        Width = 492
+        ClientWidth = 492
+      end
+    end
+  end
+end

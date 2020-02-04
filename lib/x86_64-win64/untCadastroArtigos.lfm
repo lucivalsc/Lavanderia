@@ -1,0 +1,20 @@
+inherited frmCadastroArtigos: TfrmCadastroArtigos
+  inherited PageControl1: TPageControl
+    inherited tabEdicao: TTabSheet
+      object lblQuantidade: TLabel [2]
+        Left = 40
+        Top = 164
+        Width = 56
+        Height = 13
+        Caption = 'Quantidade'
+      end
+      object edtQuantidade: TEdit
+        Left = 40
+        Top = 183
+        Width = 121
+        Height = 21
+        TabOrder = 3
+      end
+    end
+  end
+end

@@ -1,0 +1,138 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 379
+  Height = 580
+  Top = 119
+  Width = 804
+  Caption = 'Lavanderia'
+  Menu = MainMenu1
+  Position = poDesktopCenter
+  LCLVersion = '2.0.4.0'
+  WindowState = wsMaximized
+  object MainMenu1: TMainMenu
+    left = 188
+    top = 52
+    object Arquivo1: TMenuItem
+      Caption = 'Arquivo'
+      object Configuraes1: TMenuItem
+        Caption = 'Configurações'
+        Visible = False
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object Sair1: TMenuItem
+        Caption = 'Sair'
+      end
+    end
+    object Movimento1: TMenuItem
+      Caption = 'Cadastro'
+      object Artigos1: TMenuItem
+        Caption = 'Artigos'
+        OnClick = Artigos1Click
+      end
+      object Marca1: TMenuItem
+        Caption = '-'
+      end
+      object Marca2: TMenuItem
+        Caption = 'Marcas'
+        OnClick = Marca2Click
+      end
+      object N5: TMenuItem
+        Caption = '-'
+      end
+      object MotivodaBaixa1: TMenuItem
+        Caption = 'Motivos das Ocorrências'
+        OnClick = MotivodaBaixa1Click
+      end
+      object N10: TMenuItem
+        Caption = '-'
+      end
+      object Fornecedor1: TMenuItem
+        Caption = 'Fornecedores'
+        OnClick = Fornecedor1Click
+      end
+      object N7: TMenuItem
+        Caption = '-'
+      end
+      object Produtos1: TMenuItem
+        Caption = 'Produtos'
+        OnClick = Produtos1Click
+      end
+      object N12: TMenuItem
+        Caption = '-'
+      end
+      object Setores2: TMenuItem
+        Caption = 'Setores'
+        object Setores1: TMenuItem
+          Caption = 'Unidades'
+          OnClick = Setores1Click
+        end
+        object MenuItem1: TMenuItem
+          Caption = 'Quartos'
+          OnClick = MenuItem1Click
+        end
+        object MenuItem2: TMenuItem
+          Caption = 'Leitos'
+          OnClick = MenuItem2Click
+        end
+      end
+    end
+    object Movimento2: TMenuItem
+      Caption = 'Movimento'
+      object Registrarsada1: TMenuItem
+        Caption = 'Registrar Movimento'
+        OnClick = Registrarsada1Click
+      end
+      object N6: TMenuItem
+        Caption = '-'
+      end
+      object RegistrarOcorrncias1: TMenuItem
+        Caption = 'Registrar Ocorrências'
+        OnClick = RegistrarOcorrncias1Click
+      end
+    end
+    object Relatrios1: TMenuItem
+      Caption = 'Relatórios'
+      object Movimentaes1: TMenuItem
+        Caption = 'Movimentações'
+      end
+      object N9: TMenuItem
+        Caption = '-'
+      end
+      object Peasporsetor1: TMenuItem
+        Caption = 'Quantidade de Peças x Setor'
+      end
+      object N4: TMenuItem
+        Caption = '-'
+      end
+      object QuantidadedePeasxSituao1: TMenuItem
+        Caption = 'Quantidade de Peças x Situação'
+      end
+    end
+    object Segurana1: TMenuItem
+      Caption = 'Segurança'
+      object Cadastrarusurios1: TMenuItem
+        Caption = 'Cadastrar usuários'
+      end
+      object N2: TMenuItem
+        Caption = '-'
+      end
+      object Alterarsenha1: TMenuItem
+        Caption = 'Alterar senha'
+      end
+      object N3: TMenuItem
+        Caption = '-'
+      end
+      object TrocardeUsuario1: TMenuItem
+        Caption = 'Trocar de usuário'
+      end
+    end
+    object Ajuda1: TMenuItem
+      Caption = 'Ajuda'
+      object Sobre1: TMenuItem
+        Caption = 'Sobre'
+        OnClick = Sobre1Click
+      end
+    end
+  end
+end

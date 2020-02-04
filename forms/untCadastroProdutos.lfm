@@ -1,0 +1,1466 @@
+object frmCadastroProdutos: TfrmCadastroProdutos
+  Left = 374
+  Height = 460
+  Top = 129
+  Width = 740
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Cadastro de Produtos'
+  ClientHeight = 460
+  ClientWidth = 740
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poMainFormCenter
+  LCLVersion = '2.0.4.0'
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 460
+    Top = 0
+    Width = 740
+    ActivePage = tabListaProduto
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 0
+    object tabListaProduto: TTabSheet
+      Caption = 'Lista de Produtos'
+      ClientHeight = 434
+      ClientWidth = 732
+      object Panel3: TPanel
+        Left = 0
+        Height = 57
+        Top = 0
+        Width = 732
+        Align = alTop
+        BevelOuter = bvNone
+        ClientHeight = 57
+        ClientWidth = 732
+        TabOrder = 0
+        object Label12: TLabel
+          Left = 15
+          Height = 13
+          Top = 6
+          Width = 93
+          Caption = 'Descrição do Artigo'
+          ParentColor = False
+        end
+        object lblQuantidadeArtigos: TLabel
+          Left = 435
+          Height = 18
+          Top = 25
+          Width = 65
+          Caption = 'Qtde: 05'
+          Font.Color = clWindowText
+          Font.Height = -15
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object edtDescricaoArtigo: TEdit
+          Left = 15
+          Height = 21
+          Top = 25
+          Width = 410
+          CharCase = ecUppercase
+          OnChange = edtDescricaoArtigoChange
+          TabOrder = 0
+        end
+      end
+      object DBGrid2: TDBGrid
+        Left = 0
+        Height = 340
+        Top = 57
+        Width = 732
+        Align = alClient
+        Color = clWindow
+        Columns = <        
+          item
+            ReadOnly = True
+            Title.Caption = 'Código'
+            FieldName = 'CD_CADASTRO'
+          end        
+          item
+            ReadOnly = True
+            Title.Caption = 'Descrição do Artigo'
+            Width = 450
+            FieldName = 'DS_CADASTRO'
+          end        
+          item
+            Alignment = taRightJustify
+            ReadOnly = True
+            Title.Caption = 'Quantidade'
+            Width = 90
+            FieldName = 'TOTAL'
+          end>
+        DataSource = DataSource2
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+        PopupMenu = PopupMenu1
+        TabOrder = 1
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+      end
+      object Panel4: TPanel
+        Left = 0
+        Height = 37
+        Top = 397
+        Width = 732
+        Align = alBottom
+        BevelOuter = bvNone
+        ClientHeight = 37
+        ClientWidth = 732
+        TabOrder = 2
+        object Button1: TButton
+          Cursor = crHandPoint
+          Left = 15
+          Height = 25
+          Top = 9
+          Width = 115
+          Caption = 'Inventário'
+          OnClick = Button1Click
+          TabOrder = 0
+        end
+        object Button4: TButton
+          Cursor = crHandPoint
+          Left = 136
+          Height = 25
+          Top = 9
+          Width = 115
+          Caption = 'Adicionar produto'
+          OnClick = Editarartigo1Click
+          TabOrder = 1
+        end
+      end
+    end
+    object tabCadastroProduto: TTabSheet
+      Caption = 'Cadastro Produtos'
+      ClientHeight = 434
+      ClientWidth = 732
+      ImageIndex = 1
+      object Panel5: TPanel
+        Left = 0
+        Height = 99
+        Top = 0
+        Width = 732
+        Align = alTop
+        BevelOuter = bvNone
+        ClientHeight = 99
+        ClientWidth = 732
+        TabOrder = 0
+        object Label1: TLabel
+          Left = 15
+          Height = 13
+          Top = 4
+          Width = 33
+          Caption = 'Código'
+          ParentColor = False
+        end
+        object Label2: TLabel
+          Left = 211
+          Height = 13
+          Top = 4
+          Width = 93
+          Caption = 'Descrição do Artigo'
+          ParentColor = False
+        end
+        object Label3: TLabel
+          Left = 15
+          Height = 13
+          Top = 53
+          Width = 92
+          Caption = 'Destino de entrada'
+          ParentColor = False
+        end
+        object edtDescricaoProduto: TEdit
+          Left = 211
+          Height = 21
+          Top = 23
+          Width = 475
+          CharCase = ecUppercase
+          Color = clBtnFace
+          Enabled = False
+          TabOrder = 1
+        end
+        object edtCodigoProduto: TEdit
+          Left = 15
+          Height = 21
+          Top = 23
+          Width = 184
+          Color = clBtnFace
+          Enabled = False
+          TabOrder = 0
+        end
+        object ComboBox1: TComboBox
+          Left = 15
+          Height = 21
+          Top = 72
+          Width = 396
+          ItemHeight = 13
+          Style = csDropDownList
+          TabOrder = 2
+        end
+      end
+      object Panel1: TPanel
+        Left = 0
+        Height = 99
+        Top = 99
+        Width = 732
+        Align = alTop
+        BevelOuter = bvNone
+        ClientHeight = 99
+        ClientWidth = 732
+        TabOrder = 1
+        object Label4: TLabel
+          Left = 15
+          Height = 13
+          Top = 6
+          Width = 82
+          Caption = 'Código de Barras'
+          ParentColor = False
+        end
+        object Label5: TLabel
+          Left = 15
+          Height = 13
+          Top = 52
+          Width = 55
+          Caption = 'Fornecedor'
+          ParentColor = False
+        end
+        object Label6: TLabel
+          Left = 211
+          Height = 13
+          Top = 6
+          Width = 76
+          Caption = 'Tipo de Produto'
+          ParentColor = False
+        end
+        object Label7: TLabel
+          Left = 444
+          Height = 13
+          Top = 6
+          Width = 29
+          Caption = 'Marca'
+          ParentColor = False
+        end
+        object SpeedButton2: TSpeedButton
+          Cursor = crHandPoint
+          Left = 416
+          Height = 22
+          Hint = 'SELECT CD_TP_AQUISICAO CD_CADASTRO, DS_TP_AQUISICAO DS_CADASTRO FROM TP_AQUISICAO'
+          Top = 24
+          Width = 23
+          Glyph.Data = {
+            36030000424D3603000000000000360000002800000010000000100000000100
+            18000000000000030000C40E0000C40E00000000000000000000FFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC8C8C85050
+            50202020818181F1F1F1FFFFFFFFFFFFFFFFFFFFFFFFF5F5F5C5C5C592929276
+            7676A4A4A4D8D8D8B6B6B60707073F3F3F808080141414858585FFFFFFFFFFFF
+            FFFFFFA4A4A41111110000001C1C1C3939390E0E0E000000000000404040FBFB
+            FBFFFFFF878787262626FFFFFFFCFCFC555555030303787878E9E9E9FFFFFFFF
+            FFFFFEFEFED3D3D3434343080808BABABAFEFEFE4D4D4D585858FFFFFF888888
+            0A0A0AC4C4C4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFE8080800909
+            094F4F4F070707CBCBCBD5D5D5070707919191FFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFEFEFE424242000000B7B7B7FFFFFF7C7C7C272727
+            FEFEFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD6D6
+            D6000000E0E0E0FFFFFF474747626262FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF121212A9A9A9FFFFFF171717919191
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FF414141777777FFFFFF313131787878FDFDFD585858D8D8D8FFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF262626939393FFFFFF646464484848
+            FEFEFE2E2E2E252525F0F0F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF1F1
+            F1010101C8C8C8FFFFFFA6A6A6060606D4D4D4BABABA050505474747D4D4D4F4
+            F4F4F3F3F3FFFFFFFFFFFFFFFFFF878787121212F8F8F8FFFFFFFEFEFE414141
+            353535FCFCFCBDBDBD202020000000000000212121FBFBFBFFFFFFD3D3D30707
+            07A5A5A5FFFFFFFFFFFFFFFFFFDDDDDD0C0C0C373737D6D6D6FFFFFFD1D1D1C4
+            C4C4E3E3E3FFFFFFA9A9A9131313515151FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            DBDBDB3D3D3D070707505050848484A1A1A17474743B3B3B0404047D7D7DFAFA
+            FAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFE9E9E9E5959592727270F
+            0F0F3D3D3D707070CDCDCDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          }
+          OnClick = SpeedButton2Click
+        end
+        object SpeedButton3: TSpeedButton
+          Tag = 1
+          Cursor = crHandPoint
+          Left = 692
+          Height = 22
+          Hint = 'SELECT CD_MARCA CD_CADASTRO, DS_MARCA DS_CADASTRO FROM MARCA'
+          Top = 24
+          Width = 23
+          Glyph.Data = {
+            36030000424D3603000000000000360000002800000010000000100000000100
+            18000000000000030000C40E0000C40E00000000000000000000FFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC8C8C85050
+            50202020818181F1F1F1FFFFFFFFFFFFFFFFFFFFFFFFF5F5F5C5C5C592929276
+            7676A4A4A4D8D8D8B6B6B60707073F3F3F808080141414858585FFFFFFFFFFFF
+            FFFFFFA4A4A41111110000001C1C1C3939390E0E0E000000000000404040FBFB
+            FBFFFFFF878787262626FFFFFFFCFCFC555555030303787878E9E9E9FFFFFFFF
+            FFFFFEFEFED3D3D3434343080808BABABAFEFEFE4D4D4D585858FFFFFF888888
+            0A0A0AC4C4C4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFE8080800909
+            094F4F4F070707CBCBCBD5D5D5070707919191FFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFEFEFE424242000000B7B7B7FFFFFF7C7C7C272727
+            FEFEFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD6D6
+            D6000000E0E0E0FFFFFF474747626262FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF121212A9A9A9FFFFFF171717919191
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FF414141777777FFFFFF313131787878FDFDFD585858D8D8D8FFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF262626939393FFFFFF646464484848
+            FEFEFE2E2E2E252525F0F0F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF1F1
+            F1010101C8C8C8FFFFFFA6A6A6060606D4D4D4BABABA050505474747D4D4D4F4
+            F4F4F3F3F3FFFFFFFFFFFFFFFFFF878787121212F8F8F8FFFFFFFEFEFE414141
+            353535FCFCFCBDBDBD202020000000000000212121FBFBFBFFFFFFD3D3D30707
+            07A5A5A5FFFFFFFFFFFFFFFFFFDDDDDD0C0C0C373737D6D6D6FFFFFFD1D1D1C4
+            C4C4E3E3E3FFFFFFA9A9A9131313515151FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            DBDBDB3D3D3D070707505050848484A1A1A17474743B3B3B0404047D7D7DFAFA
+            FAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFE9E9E9E5959592727270F
+            0F0F3D3D3D707070CDCDCDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          }
+          OnClick = SpeedButton2Click
+        end
+        object SpeedButton4: TSpeedButton
+          Tag = 2
+          Cursor = crHandPoint
+          Left = 540
+          Height = 22
+          Hint = 'SELECT CD_FORNECEDORES CD_CADASTRO, NM_FANTASIA DS_CADASTRO FROM FORNECEDORES'
+          Top = 71
+          Width = 23
+          Glyph.Data = {
+            36030000424D3603000000000000360000002800000010000000100000000100
+            18000000000000030000C40E0000C40E00000000000000000000FFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC8C8C85050
+            50202020818181F1F1F1FFFFFFFFFFFFFFFFFFFFFFFFF5F5F5C5C5C592929276
+            7676A4A4A4D8D8D8B6B6B60707073F3F3F808080141414858585FFFFFFFFFFFF
+            FFFFFFA4A4A41111110000001C1C1C3939390E0E0E000000000000404040FBFB
+            FBFFFFFF878787262626FFFFFFFCFCFC555555030303787878E9E9E9FFFFFFFF
+            FFFFFEFEFED3D3D3434343080808BABABAFEFEFE4D4D4D585858FFFFFF888888
+            0A0A0AC4C4C4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFE8080800909
+            094F4F4F070707CBCBCBD5D5D5070707919191FFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFEFEFE424242000000B7B7B7FFFFFF7C7C7C272727
+            FEFEFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD6D6
+            D6000000E0E0E0FFFFFF474747626262FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF121212A9A9A9FFFFFF171717919191
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FF414141777777FFFFFF313131787878FDFDFD585858D8D8D8FFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF262626939393FFFFFF646464484848
+            FEFEFE2E2E2E252525F0F0F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF1F1
+            F1010101C8C8C8FFFFFFA6A6A6060606D4D4D4BABABA050505474747D4D4D4F4
+            F4F4F3F3F3FFFFFFFFFFFFFFFFFF878787121212F8F8F8FFFFFFFEFEFE414141
+            353535FCFCFCBDBDBD202020000000000000212121FBFBFBFFFFFFD3D3D30707
+            07A5A5A5FFFFFFFFFFFFFFFFFFDDDDDD0C0C0C373737D6D6D6FFFFFFD1D1D1C4
+            C4C4E3E3E3FFFFFFA9A9A9131313515151FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            DBDBDB3D3D3D070707505050848484A1A1A17474743B3B3B0404047D7D7DFAFA
+            FAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFE9E9E9E5959592727270F
+            0F0F3D3D3D707070CDCDCDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          }
+          OnClick = SpeedButton2Click
+        end
+        object edtCodigoBarras: TEdit
+          Left = 15
+          Height = 21
+          Top = 25
+          Width = 184
+          TabOrder = 0
+        end
+        object edtDescricaoFornecedor: TEdit
+          Left = 65
+          Height = 21
+          Top = 71
+          Width = 471
+          CharCase = ecUppercase
+          Color = clBtnFace
+          Enabled = False
+          TabOrder = 6
+        end
+        object edtDescricaoTipoProduto: TEdit
+          Left = 261
+          Height = 21
+          Top = 25
+          Width = 150
+          CharCase = ecUppercase
+          Color = clBtnFace
+          Enabled = False
+          TabOrder = 2
+        end
+        object edtDescricaoMarca: TEdit
+          Left = 494
+          Height = 21
+          Top = 25
+          Width = 192
+          CharCase = ecUppercase
+          Color = clBtnFace
+          Enabled = False
+          TabOrder = 4
+        end
+        object edtCodigoTipoProduto: TEdit
+          Left = 211
+          Height = 21
+          Top = 25
+          Width = 45
+          CharCase = ecUppercase
+          Color = clBtnFace
+          Enabled = False
+          TabOrder = 1
+        end
+        object edtCodigoMarca: TEdit
+          Left = 444
+          Height = 21
+          Top = 25
+          Width = 45
+          CharCase = ecUppercase
+          Color = clBtnFace
+          Enabled = False
+          TabOrder = 3
+        end
+        object edtCodigoFornecedor: TEdit
+          Left = 15
+          Height = 21
+          Top = 71
+          Width = 45
+          CharCase = ecUppercase
+          Color = clBtnFace
+          Enabled = False
+          TabOrder = 5
+        end
+        object btnAdicionar: TButton
+          Cursor = crHandPoint
+          Left = 569
+          Height = 25
+          Top = 71
+          Width = 147
+          Caption = 'Adicionar'
+          OnClick = btnAdicionarClick
+          TabOrder = 7
+        end
+      end
+      object DBGrid1: TDBGrid
+        Left = 0
+        Height = 198
+        Top = 198
+        Width = 732
+        Align = alClient
+        Color = clWindow
+        Columns = <        
+          item
+            Title.Caption = 'Código de Barras'
+            Width = 100
+            FieldName = 'CD_BARRAS'
+          end        
+          item
+            Title.Caption = 'Tipo de Produto'
+            Width = 150
+            FieldName = 'DS_TIPO_PRODUTO'
+          end        
+          item
+            Title.Caption = 'Title'
+            Width = 5
+          end        
+          item
+            Title.Caption = 'Marca'
+            Width = 150
+            FieldName = 'DS_MARCA'
+          end        
+          item
+            Title.Caption = 'Title'
+            Width = 5
+          end        
+          item
+            Title.Caption = 'Fornecedor'
+            Width = 150
+            FieldName = 'DS_FORNECEDOR'
+          end        
+          item
+            Title.Caption = 'Title'
+            Width = 5
+          end        
+          item
+            Title.Caption = 'Situacao'
+            Width = 50
+            FieldName = 'SITUACAO'
+          end>
+        DataSource = DataSource1
+        PopupMenu = PopupMenu2
+        ReadOnly = True
+        TabOrder = 2
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        OnCellClick = DBGrid1CellClick
+      end
+      object Panel2: TPanel
+        Left = 0
+        Height = 38
+        Top = 396
+        Width = 732
+        Align = alBottom
+        BevelOuter = bvNone
+        ClientHeight = 38
+        ClientWidth = 732
+        TabOrder = 3
+        object btnCancelar: TButton
+          Cursor = crHandPoint
+          Left = 601
+          Height = 25
+          Top = 9
+          Width = 114
+          Caption = 'Cancelar'
+          OnClick = btnCancelarClick
+          TabOrder = 1
+        end
+        object btnInativar: TButton
+          Cursor = crHandPoint
+          Left = 15
+          Height = 25
+          Top = 9
+          Width = 114
+          Caption = 'Inativar'
+          OnClick = btnInativarClick
+          TabOrder = 0
+        end
+      end
+    end
+    object tabInventario: TTabSheet
+      Caption = 'Inventário'
+      ClientHeight = 434
+      ClientWidth = 732
+      ImageIndex = 2
+      object panelPrincipalInventario: TPanel
+        Left = 0
+        Height = 145
+        Top = 0
+        Width = 732
+        Align = alTop
+        BevelOuter = bvNone
+        ClientHeight = 145
+        ClientWidth = 732
+        TabOrder = 0
+        object Label11: TLabel
+          Left = 36
+          Height = 13
+          Top = 52
+          Width = 40
+          Caption = 'Usuário:'
+          ParentColor = False
+        end
+        object Label13: TLabel
+          Left = 431
+          Height = 13
+          Top = 21
+          Width = 27
+          Caption = 'Data:'
+          ParentColor = False
+          Visible = False
+        end
+        object Label14: TLabel
+          Left = 19
+          Height = 13
+          Top = 84
+          Width = 57
+          Caption = 'Cód. Barras'
+          ParentColor = False
+        end
+        object lblQuantidadeInventariada: TLabel
+          Left = 75
+          Height = 25
+          Top = 11
+          Width = 245
+          Caption = 'Qtde Inventariada: 450'
+          Font.Color = clWindowText
+          Font.Height = -21
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object btnBuscarProduto: TButton
+          Left = 564
+          Height = 25
+          Top = 48
+          Width = 136
+          Caption = 'Buscar produto'
+          OnClick = btnBuscarProdutoClick
+          TabOrder = 0
+        end
+        object Panel8: TPanel
+          Left = 0
+          Height = 25
+          Top = 120
+          Width = 732
+          Align = alBottom
+          BevelOuter = bvNone
+          ClientHeight = 25
+          ClientWidth = 732
+          TabOrder = 6
+          object Panel9: TPanel
+            Left = 3
+            Height = 21
+            Top = 3
+            Width = 73
+            Caption = 'Código'
+            TabOrder = 0
+          end
+          object Panel10: TPanel
+            Left = 78
+            Height = 21
+            Top = 3
+            Width = 242
+            Caption = 'Descrição'
+            TabOrder = 1
+          end
+          object Panel11: TPanel
+            Left = 322
+            Height = 21
+            Top = 3
+            Width = 73
+            Caption = 'Estoque'
+            TabOrder = 2
+          end
+          object Panel12: TPanel
+            Left = 397
+            Height = 21
+            Top = 3
+            Width = 73
+            Caption = '1º Contagem'
+            TabOrder = 3
+          end
+          object Panel13: TPanel
+            Left = 472
+            Height = 21
+            Top = 3
+            Width = 73
+            Caption = 'Diferença'
+            TabOrder = 4
+            Visible = False
+          end
+          object Panel14: TPanel
+            Left = 548
+            Height = 21
+            Top = 3
+            Width = 73
+            Caption = '3º Contagem'
+            TabOrder = 5
+            Visible = False
+          end
+        end
+        object Edit1: TEdit
+          Left = 460
+          Height = 21
+          Top = 18
+          Width = 121
+          Color = clBtnFace
+          Enabled = False
+          TabOrder = 1
+          Text = '12/12/2018 23:59:23'
+          Visible = False
+        end
+        object edtNomeUsuario: TEdit
+          Left = 78
+          Height = 21
+          Top = 49
+          Width = 379
+          CharCase = ecUppercase
+          Color = clBtnFace
+          Enabled = False
+          TabOrder = 2
+          Text = 'LUCIVALSC'
+        end
+        object edtInventarioCodigoBarrasInventario: TEdit
+          Left = 78
+          Height = 21
+          Top = 81
+          Width = 131
+          OnChange = edtInventarioCodigoBarrasInventarioChange
+          TabOrder = 4
+        end
+        object btnSalvarContagem: TButton
+          Left = 564
+          Height = 25
+          Hint = 'Salva contagem de maneira temporária'
+          Top = 79
+          Width = 136
+          Caption = 'Salvar contagem'
+          Enabled = False
+          OnClick = btnSalvarContagemClick
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 3
+        end
+        object Button6: TButton
+          Left = 473
+          Height = 25
+          Top = 79
+          Width = 75
+          Caption = 'Inserir'
+          OnClick = Button6Click
+          TabOrder = 5
+        end
+        object edtInventarioDescricaoArtigo: TEdit
+          Left = 215
+          Height = 21
+          Top = 81
+          Width = 242
+          Color = clBtnFace
+          Enabled = False
+          TabOrder = 7
+        end
+      end
+      object Panel7: TPanel
+        Left = 0
+        Height = 37
+        Top = 397
+        Width = 732
+        Align = alBottom
+        BevelOuter = bvNone
+        ClientHeight = 37
+        ClientWidth = 732
+        TabOrder = 2
+        object Button10: TButton
+          Left = 15
+          Height = 25
+          Top = 10
+          Width = 115
+          Caption = 'Visualizar'
+          OnClick = Button10Click
+          TabOrder = 0
+        end
+        object Button3: TButton
+          Left = 608
+          Height = 25
+          Top = 10
+          Width = 92
+          Caption = 'Cancelar'
+          OnClick = Button3Click
+          TabOrder = 1
+        end
+        object btnAtualizarEstoque: TButton
+          Left = 460
+          Height = 25
+          Hint = 'Finalizar processo de inventário alterando definitivamente o estoque.'
+          Top = 10
+          Width = 136
+          Caption = 'Atualizar estoque'
+          Enabled = False
+          OnClick = btnAtualizarEstoqueClick
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 2
+        end
+      end
+      object DBGrid4: TDBGrid
+        Left = 0
+        Height = 252
+        Top = 145
+        Width = 732
+        Align = alClient
+        Color = clWindow
+        Columns = <        
+          item
+            ReadOnly = True
+            Title.Caption = 'Código'
+            Width = 62
+            FieldName = 'CD_CADASTRO'
+          end        
+          item
+            ReadOnly = True
+            Title.Caption = 'Descrição'
+            Width = 243
+            FieldName = 'DS_CADASTRO'
+          end        
+          item
+            Alignment = taRightJustify
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ReadOnly = True
+            Title.Caption = 'Estoque'
+            Width = 74
+            FieldName = 'TOTAL'
+          end        
+          item
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ReadOnly = True
+            Title.Caption = '1º Contagem'
+            Width = 76
+            FieldName = 'CONTAGEM1'
+          end        
+          item
+            ReadOnly = True
+            Title.Caption = 'Diferenca'
+            Visible = False
+            FieldName = 'TOTAL_INTERNAL_CALC'
+          end>
+        DataSource = DataSource4
+        Options = [dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+        TabOrder = 1
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        OnDblClick = DBGrid4DblClick
+      end
+    end
+    object tabInventarioCodigoBarras: TTabSheet
+      Caption = 'Inventário Código Barras'
+      ClientHeight = 434
+      ClientWidth = 732
+      ImageIndex = 3
+      object Panel6: TPanel
+        Left = 0
+        Height = 145
+        Top = 0
+        Width = 732
+        Align = alTop
+        BevelOuter = bvNone
+        ClientHeight = 145
+        ClientWidth = 732
+        TabOrder = 0
+        object Label17: TLabel
+          Left = 30
+          Height = 13
+          Top = 85
+          Width = 86
+          Caption = 'Código de Barras:'
+          ParentColor = False
+        end
+        object lblInventarioDescricaoArtigo: TLabel
+          Left = 34
+          Height = 18
+          Top = 13
+          Width = 132
+          Caption = 'Código de Barras:'
+          Font.Color = clWindowText
+          Font.Height = -15
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Panel15: TPanel
+          Left = 0
+          Height = 25
+          Top = 120
+          Width = 732
+          Align = alBottom
+          BevelOuter = bvNone
+          ClientHeight = 25
+          ClientWidth = 732
+          TabOrder = 3
+          object lblInventarioQuantidadeCodigos: TLabel
+            Left = 401
+            Height = 18
+            Top = 3
+            Width = 202
+            Caption = 'Qtde de Códigos de Barras:'
+            Font.Color = clWindowText
+            Font.Height = -15
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object Panel16: TPanel
+            Left = 3
+            Height = 21
+            Top = 3
+            Width = 73
+            Caption = 'Código'
+            TabOrder = 0
+          end
+          object Panel17: TPanel
+            Left = 78
+            Height = 21
+            Top = 3
+            Width = 242
+            Caption = 'Descrição'
+            TabOrder = 1
+          end
+          object Panel18: TPanel
+            Left = 322
+            Height = 21
+            Top = 3
+            Width = 73
+            Caption = 'Contagem'
+            TabOrder = 2
+          end
+        end
+        object edtInventarioCodigoBarras: TEdit
+          Left = 117
+          Height = 21
+          Top = 81
+          Width = 203
+          OnChange = edtInventarioCodigoBarrasChange
+          TabOrder = 1
+        end
+        object btnInvetarioInserir: TButton
+          Left = 604
+          Height = 25
+          Top = 79
+          Width = 92
+          Caption = 'Inserir'
+          Default = True
+          OnClick = btnInvetarioInserirClick
+          TabOrder = 0
+        end
+        object edtCodigoBarrasDescricao: TEdit
+          Left = 322
+          Height = 21
+          Top = 81
+          Width = 276
+          Color = clBtnFace
+          Enabled = False
+          TabOrder = 2
+        end
+      end
+      object Panel22: TPanel
+        Left = 0
+        Height = 37
+        Top = 397
+        Width = 732
+        Align = alBottom
+        BevelOuter = bvNone
+        ClientHeight = 37
+        ClientWidth = 732
+        TabOrder = 2
+        object Button5: TButton
+          Left = 608
+          Height = 25
+          Top = 10
+          Width = 92
+          Caption = 'Ok'
+          OnClick = Button5Click
+          TabOrder = 1
+        end
+        object Button2: TButton
+          Left = 488
+          Height = 25
+          Top = 10
+          Width = 114
+          Caption = 'Cancelar'
+          OnClick = Button2Click
+          TabOrder = 0
+        end
+      end
+      object DBGrid3: TDBGrid
+        Left = 0
+        Height = 252
+        Top = 145
+        Width = 732
+        Align = alClient
+        Color = clWindow
+        Columns = <        
+          item
+            Title.Caption = 'CD_BARRAS'
+            Width = 63
+            FieldName = 'CD_BARRAS'
+          end        
+          item
+            Title.Caption = 'DS_TIPO_PRODUTO'
+            Width = 243
+            FieldName = 'DS_TIPO_PRODUTO'
+          end        
+          item
+            Title.Caption = 'QUANTIDADE'
+            Width = 73
+            FieldName = 'QUANTIDADE'
+          end>
+        DataSource = DataSource3
+        TabOrder = 1
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+      end
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = FDMemTableCadastro
+    left = 208
+    top = 248
+  end
+  object DataSource2: TDataSource
+    DataSet = BufTableListagem
+    left = 48
+    top = 248
+  end
+  object PopupMenu1: TPopupMenu
+    left = 48
+    top = 104
+    object Editarartigo1: TMenuItem
+      Caption = 'Adicionar produto'
+      OnClick = Editarartigo1Click
+    end
+    object N2: TMenuItem
+      Caption = '-'
+      Visible = False
+    end
+    object Inventrio1: TMenuItem
+      Caption = 'Atualizar quantidades'
+      Visible = False
+      object Zerarquantidades1: TMenuItem
+        Caption = 'Zerar quantidades'
+        Visible = False
+        OnClick = Zerarquantidades1Click
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object Salvarquantidades1: TMenuItem
+        Caption = 'Salvar quantidades'
+        Visible = False
+        OnClick = Salvarquantidades1Click
+      end
+      object N3: TMenuItem
+        Caption = '-'
+      end
+      object Cancelar1: TMenuItem
+        Caption = 'Cancelar'
+        Enabled = False
+        Visible = False
+        OnClick = Cancelar1Click
+      end
+    end
+    object N4: TMenuItem
+      Caption = '-'
+      Visible = False
+    end
+    object Criarinventrio1: TMenuItem
+      Caption = 'Criar inventário'
+      Visible = False
+      OnClick = Criarinventrio1Click
+    end
+  end
+  object PopupMenu2: TPopupMenu
+    left = 432
+    top = 16
+    object MenuItem8: TMenuItem
+      Caption = 'Filtrar'
+      object MenuItem9: TMenuItem
+        Caption = 'Código de barras'
+        Hint = 'CD_BARRAS'
+        OnClick = Cdigodebarras1Click
+      end
+      object MenuItem10: TMenuItem
+        Caption = 'Tipo de produto'
+        Hint = 'DS_TIPO_PRODUTO'
+        OnClick = Cdigodebarras1Click
+      end
+      object MenuItem11: TMenuItem
+        Caption = 'Marca'
+        Hint = 'DS_MARCA'
+        OnClick = Cdigodebarras1Click
+      end
+      object MenuItem12: TMenuItem
+        Caption = 'Fornecedor'
+        Hint = 'DS_FORNECEDOR'
+        OnClick = Cdigodebarras1Click
+      end
+      object MenuItem13: TMenuItem
+        Caption = 'Situação'
+        Hint = 'SITUACAO'
+        OnClick = Cdigodebarras1Click
+      end
+    end
+    object MenuItem14: TMenuItem
+      Caption = 'Limpar filtro'
+      OnClick = Limparfiltro1Click
+    end
+    object N5: TMenuItem
+      Caption = '-'
+    end
+    object Editar1: TMenuItem
+      Caption = 'Editar'
+      Visible = False
+      OnClick = Editar1Click
+    end
+  end
+  object DataSource3: TDataSource
+    DataSet = FDMemTableCodigoBarras
+    left = 208
+    top = 368
+  end
+  object PopupMenuInventario: TPopupMenu
+    left = 256
+    top = 16
+    object Inserirporcdigodebarras1: TMenuItem
+      Caption = 'Inserir por código de barras'
+    end
+  end
+  object DataSource4: TDataSource
+    DataSet = FDMemTableInventario
+    left = 48
+    top = 368
+  end
+  object BufTableListagem: TBufDataset
+    FieldDefs = <>
+    left = 48
+    top = 176
+    object BufTableListagemDS_CADASTRO: TStringField
+      FieldKind = fkData
+      FieldName = 'DS_CADASTRO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object BufTableListagemTOTAL: TFloatField
+      FieldKind = fkData
+      FieldName = 'TOTAL'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+    end
+    object BufTableListagemDT_INVENTARIO: TStringField
+      FieldKind = fkData
+      FieldName = 'DT_INVENTARIO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object BufTableListagemNM_INVENTARIO: TStringField
+      FieldKind = fkData
+      FieldName = 'NM_INVENTARIO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object BufTableListagemCD_CADASTRO: TLongintField
+      FieldKind = fkData
+      FieldName = 'CD_CADASTRO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object BufTableListagemQT_ARTIGO: TLongintField
+      FieldKind = fkData
+      FieldName = 'QT_ARTIGO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object BufTableListagemCONTAGEM1: TLongintField
+      FieldKind = fkData
+      FieldName = 'CONTAGEM1'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object BufTableListagemCONTAGEM2: TLongintField
+      FieldKind = fkData
+      FieldName = 'CONTAGEM2'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object BufTableListagemCONTAGEM3: TLongintField
+      FieldKind = fkData
+      FieldName = 'CONTAGEM3'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object FDMemTableCadastro: TBufDataset
+    FieldDefs = <>
+    left = 210
+    top = 176
+    object FDMemTableCadastroCD_BARRAS: TStringField
+      FieldKind = fkData
+      FieldName = 'CD_BARRAS'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object FDMemTableCadastroCD_TIPO_PRODUTO: TLongintField
+      FieldKind = fkData
+      FieldName = 'CD_TIPO_PRODUTO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object FDMemTableCadastroDS_TIPO_PRODUTO: TStringField
+      FieldKind = fkData
+      FieldName = 'DS_TIPO_PRODUTO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object FDMemTableCadastroCD_MARCA: TLongintField
+      FieldKind = fkData
+      FieldName = 'CD_MARCA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object FDMemTableCadastroDS_MARCA: TStringField
+      FieldKind = fkData
+      FieldName = 'DS_MARCA'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object FDMemTableCadastroCD_FORNECEDOR: TLongintField
+      FieldKind = fkData
+      FieldName = 'CD_FORNECEDOR'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object FDMemTableCadastroDS_FORNECEDOR: TStringField
+      FieldKind = fkData
+      FieldName = 'DS_FORNECEDOR'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object FDMemTableCadastroSITUACAO: TStringField
+      FieldKind = fkData
+      FieldName = 'SITUACAO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object FDMemTableCadastroCD_PRODUTO: TLongintField
+      FieldKind = fkData
+      FieldName = 'CD_PRODUTO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object FDMemTableCodigoBarras: TBufDataset
+    FieldDefs = <>
+    left = 211
+    top = 312
+    object FDMemTableCodigoBarrasCD_PRODUTO: TLongintField
+      FieldKind = fkData
+      FieldName = 'CD_PRODUTO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object FDMemTableCodigoBarrasCD_ARTIGO: TLongintField
+      FieldKind = fkData
+      FieldName = 'CD_ARTIGO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object FDMemTableCodigoBarrasCD_BARRAS: TStringField
+      FieldKind = fkData
+      FieldName = 'CD_BARRAS'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object FDMemTableCodigoBarrasDS_TIPO_PRODUTO: TStringField
+      FieldKind = fkData
+      FieldName = 'DS_TIPO_PRODUTO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object FDMemTableCodigoBarrasQUANTIDADE: TLongintField
+      FieldKind = fkData
+      FieldName = 'QUANTIDADE'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object FDMemTableInventario: TBufDataset
+    FieldDefs = <>
+    left = 48
+    top = 312
+    object FDMemTableListagemDS_CADASTRO1: TStringField
+      FieldKind = fkData
+      FieldName = 'DS_CADASTRO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object FDMemTableListagemTOTAL1: TFloatField
+      FieldKind = fkData
+      FieldName = 'TOTAL'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+    end
+    object FDMemTableListagemDT_INVENTARIO1: TStringField
+      FieldKind = fkData
+      FieldName = 'DT_INVENTARIO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object FDMemTableListagemNM_INVENTARIO1: TStringField
+      FieldKind = fkData
+      FieldName = 'NM_INVENTARIO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object FDMemTableListagemCD_CADASTRO1: TLongintField
+      FieldKind = fkData
+      FieldName = 'CD_CADASTRO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object FDMemTableListagemQT_ARTIGO1: TLongintField
+      FieldKind = fkData
+      FieldName = 'QT_ARTIGO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object FDMemTableListagemCONTAGEM4: TLongintField
+      FieldKind = fkData
+      FieldName = 'CONTAGEM1'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object FDMemTableInventarioQT_INVENTARIADA: TLongintField
+      DefaultExpression = 'SUM(CONTAGEM1)'
+      FieldKind = fkCalculated
+      FieldName = 'QT_INVENTARIADA'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object FDMemTableCodigoBarras2: TBufDataset
+    FieldDefs = <>
+    left = 392
+    top = 312
+    object FDMemTableCodigoBarrasCD_PRODUTO1: TLongintField
+      FieldKind = fkData
+      FieldName = 'CD_PRODUTO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object FDMemTableCodigoBarrasCD_ARTIGO1: TLongintField
+      FieldKind = fkData
+      FieldName = 'CD_ARTIGO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object FDMemTableCodigoBarrasCD_BARRAS1: TStringField
+      FieldKind = fkData
+      FieldName = 'CD_BARRAS'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object FDMemTableCodigoBarrasDS_TIPO_PRODUTO1: TStringField
+      FieldKind = fkData
+      FieldName = 'DS_TIPO_PRODUTO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object FDMemTableCodigoBarrasQUANTIDADE1: TLongintField
+      FieldKind = fkData
+      FieldName = 'QUANTIDADE'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+end

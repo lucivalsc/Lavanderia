@@ -1,0 +1,13 @@
+inherited frmMotivoBaixa: TfrmMotivoBaixa
+  inherited PageControl1: TPageControl
+    ActivePage = tabPrincipal
+    inherited tabPrincipal: TTabSheet
+      inherited DBGrid1: TDBGrid
+        Left = 0
+        Top = 57
+        Width = 492
+        Height = 203
+      end
+    end
+  end
+end

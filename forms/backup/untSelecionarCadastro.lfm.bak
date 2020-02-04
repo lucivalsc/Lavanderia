@@ -1,0 +1,58 @@
+object frmSelecionarCadastro: TfrmSelecionarCadastro
+  Left = 627
+  Height = 144
+  Top = 330
+  Width = 444
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Selecionar Cadastro'
+  ClientHeight = 144
+  ClientWidth = 444
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poMainFormCenter
+  LCLVersion = '2.0.4.0'
+  object Label2: TLabel
+    Left = 24
+    Height = 13
+    Top = 37
+    Width = 46
+    Caption = 'Descrição'
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    ParentColor = False
+    ParentFont = False
+  end
+  object cbTipoProduto: TComboBox
+    Left = 24
+    Height = 22
+    Top = 56
+    Width = 403
+    ItemHeight = 16
+    Style = csOwnerDrawFixed
+    TabOrder = 0
+  end
+  object Button5: TButton
+    Left = 271
+    Height = 25
+    Top = 99
+    Width = 75
+    Caption = 'Cancelar'
+    OnClick = Button2Click
+    TabOrder = 1
+  end
+  object Button6: TButton
+    Left = 352
+    Height = 25
+    Top = 99
+    Width = 75
+    Caption = 'Ok'
+    OnClick = Button6Click
+    TabOrder = 2
+  end
+end

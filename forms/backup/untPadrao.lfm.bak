@@ -1,0 +1,202 @@
+object frmPadrao: TfrmPadrao
+  Left = 613
+  Height = 345
+  Top = 222
+  Width = 505
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  ClientHeight = 345
+  ClientWidth = 505
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '2.0.4.0'
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 345
+    Top = 0
+    Width = 505
+    ActivePage = tabPrincipal
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 0
+    object tabPrincipal: TTabSheet
+      Caption = 'tabPrincipal'
+      ClientHeight = 317
+      ClientWidth = 497
+      object Panel1: TPanel
+        Left = 0
+        Height = 57
+        Top = 0
+        Width = 497
+        Align = alTop
+        BevelOuter = bvNone
+        ClientHeight = 57
+        ClientWidth = 497
+        TabOrder = 0
+        object Label3: TLabel
+          Left = 5
+          Height = 15
+          Top = 41
+          Width = 166
+          Caption = 'Duplo clique para editar o item.'
+          ParentColor = False
+        end
+      end
+      object DBGrid1: TDBGrid
+        Left = 0
+        Height = 228
+        Top = 57
+        Width = 497
+        Align = alClient
+        Color = clWindow
+        Columns = <        
+          item
+            ReadOnly = True
+            Title.Caption = 'Código'
+            Width = 104
+            FieldName = 'CD_CADASTRO'
+          end        
+          item
+            ReadOnly = True
+            Title.Caption = 'Descrição'
+            Width = 316
+            FieldName = 'DS_CADASTRO'
+          end>
+        DataSource = DataSource1
+        TabOrder = 1
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        OnDblClick = DBGrid1DblClick
+      end
+      object Panel2: TPanel
+        Left = 0
+        Height = 32
+        Top = 285
+        Width = 497
+        Align = alBottom
+        BevelOuter = bvNone
+        ClientHeight = 32
+        ClientWidth = 497
+        TabOrder = 2
+        object btnNovoRegistro: TButton
+          Cursor = crHandPoint
+          Left = 392
+          Height = 25
+          Top = 5
+          Width = 91
+          Caption = 'Novo registro'
+          OnClick = btnNovoRegistroClick
+          TabOrder = 0
+        end
+        object lblQuantidadeArtigos: TLabel
+          Left = 8
+          Height = 15
+          Top = 8
+          Width = 113
+          Caption = 'lblQuantidadeArtigos'
+          ParentColor = False
+        end
+      end
+    end
+    object tabEdicao: TTabSheet
+      Caption = 'tabEdicao'
+      ClientHeight = 317
+      ClientWidth = 497
+      ImageIndex = 1
+      object Label1: TLabel
+        Left = 40
+        Height = 15
+        Top = 61
+        Width = 39
+        Caption = 'Código'
+        ParentColor = False
+      end
+      object Label2: TLabel
+        Left = 40
+        Height = 15
+        Top = 116
+        Width = 51
+        Caption = 'Descrição'
+        ParentColor = False
+      end
+      object edtCodigo: TEdit
+        Left = 40
+        Height = 23
+        Top = 80
+        Width = 121
+        Color = clBtnFace
+        Enabled = False
+        TabOrder = 0
+      end
+      object edtDescricao: TEdit
+        Left = 40
+        Height = 23
+        Top = 135
+        Width = 417
+        CharCase = ecUppercase
+        TabOrder = 1
+      end
+      object Panel3: TPanel
+        Left = 0
+        Height = 32
+        Top = 285
+        Width = 497
+        Align = alBottom
+        BevelOuter = bvNone
+        ClientHeight = 32
+        ClientWidth = 497
+        TabOrder = 2
+        object btnSalvar: TButton
+          Cursor = crHandPoint
+          Left = 392
+          Height = 25
+          Top = 5
+          Width = 91
+          Caption = 'Salvar'
+          OnClick = btnSalvarClick
+          TabOrder = 0
+        end
+        object Button1: TButton
+          Cursor = crHandPoint
+          Left = 272
+          Height = 25
+          Top = 5
+          Width = 114
+          Caption = 'Cancelar'
+          OnClick = Button1Click
+          TabOrder = 1
+        end
+      end
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = BufDataset1
+    left = 158
+    top = 263
+  end
+  object BufDataset1: TBufDataset
+    FieldDefs = <>
+    left = 160
+    top = 200
+    object BufDataset1CD_CADASTRO: TLongintField
+      FieldKind = fkData
+      FieldName = 'CD_CADASTRO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object BufDataset1DS_CADASTRO: TStringField
+      FieldKind = fkData
+      FieldName = 'DS_CADASTRO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+  end
+end

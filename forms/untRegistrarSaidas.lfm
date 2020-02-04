@@ -1,0 +1,329 @@
+object frmRegistrarSaidas: TfrmRegistrarSaidas
+  Left = 532
+  Height = 523
+  Top = 132
+  Width = 733
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Registrar Movimentação dos Produtos'
+  ClientHeight = 523
+  ClientWidth = 733
+  OnCreate = FormCreate
+  LCLVersion = '2.0.4.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 113
+    Top = 0
+    Width = 733
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 113
+    ClientWidth = 733
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 8
+      Height = 13
+      Top = 12
+      Width = 40
+      Caption = 'Origem*'
+      Font.Color = clHotLight
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 261
+      Height = 13
+      Top = 12
+      Width = 42
+      Caption = 'Destino*'
+      Font.Color = clHotLight
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label5: TLabel
+      Left = 513
+      Height = 15
+      Top = 12
+      Width = 122
+      Caption = 'Tipo de Movimentação'
+      ParentColor = False
+    end
+    object Label6: TLabel
+      Left = 8
+      Height = 13
+      Top = 60
+      Width = 40
+      Caption = 'Quarto*'
+      Font.Color = clHotLight
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label7: TLabel
+      Left = 136
+      Height = 13
+      Top = 60
+      Width = 29
+      Caption = 'Leito*'
+      Font.Color = clHotLight
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label8: TLabel
+      Left = 261
+      Height = 13
+      Top = 60
+      Width = 40
+      Caption = 'Quarto*'
+      Font.Color = clHotLight
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label9: TLabel
+      Left = 384
+      Height = 13
+      Top = 60
+      Width = 29
+      Caption = 'Leito*'
+      Font.Color = clHotLight
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object cbOrigem: TComboBox
+      Left = 8
+      Height = 23
+      Hint = 'UNIDADE_HOSPITALAR'
+      Top = 30
+      Width = 247
+      ItemHeight = 15
+      OnExit = cbOrigemExit
+      Style = csDropDownList
+      TabOrder = 0
+    end
+    object cbDestino: TComboBox
+      Left = 261
+      Height = 23
+      Hint = 'UNIDADE_HOSPITALAR'
+      Top = 30
+      Width = 247
+      ItemHeight = 15
+      OnExit = cbDestinoExit
+      Style = csDropDownList
+      TabOrder = 1
+    end
+    object cbTipoMovimentacao: TComboBox
+      Left = 513
+      Height = 23
+      Top = 30
+      Width = 145
+      ItemHeight = 15
+      ItemIndex = 1
+      Items.Strings = (
+        'Entrada'
+        'Saída'
+      )
+      Style = csDropDownList
+      TabOrder = 2
+      Text = 'Saída'
+    end
+    object cbOrigemQuarto: TComboBox
+      Left = 8
+      Height = 23
+      Hint = 'QUARTO'
+      Top = 77
+      Width = 120
+      ItemHeight = 15
+      OnExit = cbOrigemQuartoExit
+      Style = csDropDownList
+      TabOrder = 3
+    end
+    object cbOrigemLeito: TComboBox
+      Left = 136
+      Height = 23
+      Hint = 'LEITO'
+      Top = 77
+      Width = 119
+      ItemHeight = 15
+      OnExit = cbOrigemLeitoExit
+      Style = csDropDownList
+      TabOrder = 4
+    end
+    object cbDestinoQuarto: TComboBox
+      Left = 261
+      Height = 23
+      Hint = 'QUARTO'
+      Top = 77
+      Width = 120
+      ItemHeight = 15
+      OnExit = cbDestinoQuartoExit
+      Style = csDropDownList
+      TabOrder = 5
+    end
+    object cbDestinoLeito: TComboBox
+      Left = 384
+      Height = 23
+      Hint = 'LEITO'
+      Top = 77
+      Width = 124
+      ItemHeight = 15
+      OnExit = cbDestinoLeitoExit
+      Style = csDropDownList
+      TabOrder = 6
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 49
+    Top = 113
+    Width = 733
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 49
+    ClientWidth = 733
+    TabOrder = 2
+    object Label3: TLabel
+      Left = 8
+      Height = 15
+      Top = 0
+      Width = 90
+      Caption = 'Código de Barras'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 194
+      Height = 15
+      Top = 0
+      Width = 51
+      Caption = 'Descrição'
+      ParentColor = False
+    end
+    object edtCodigo: TEdit
+      Left = 8
+      Height = 23
+      Top = 16
+      Width = 180
+      OnChange = edtCodigoChange
+      TabOrder = 0
+    end
+    object edtDescricao: TEdit
+      Left = 194
+      Height = 23
+      Top = 16
+      Width = 324
+      CharCase = ecUppercase
+      TabOrder = 1
+    end
+    object btnInserir: TButton
+      Left = 524
+      Height = 25
+      Top = 14
+      Width = 103
+      Caption = 'Inserir'
+      Default = True
+      OnClick = btnInserirClick
+      TabOrder = 2
+    end
+    object Button4: TButton
+      Left = 633
+      Height = 25
+      Top = 14
+      Width = 91
+      Caption = 'Nova remessa'
+      OnClick = Button4Click
+      TabOrder = 3
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Height = 40
+    Top = 483
+    Width = 733
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 40
+    ClientWidth = 733
+    TabOrder = 1
+    object Button1: TButton
+      Left = 633
+      Height = 25
+      Top = 6
+      Width = 91
+      Caption = 'Salvar'
+      OnClick = Button1Click
+      TabOrder = 0
+    end
+    object Button2: TButton
+      Left = 513
+      Height = 25
+      Top = 6
+      Width = 114
+      Caption = 'Cancelar'
+      OnClick = Button2Click
+      TabOrder = 1
+    end
+    object Button3: TButton
+      Left = 8
+      Height = 25
+      Top = 6
+      Width = 137
+      Caption = 'Aquisição de Produtos'
+      TabOrder = 2
+      Visible = False
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 321
+    Top = 162
+    Width = 733
+    Align = alClient
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'Código de Barras'
+        Width = 100
+        FieldName = 'CD_BARRAS'
+      end    
+      item
+        Title.Caption = 'Descrição do Artigo'
+        Width = 200
+      end    
+      item
+        Title.Caption = 'Origem'
+        Width = 175
+      end    
+      item
+        Title.Caption = 'Destino'
+        Width = 175
+      end>
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 3
+  end
+  object PopupMenu1: TPopupMenu
+    left = 160
+    top = 280
+    object RegistrarOcorrncias1: TMenuItem
+      Caption = 'Registrar Ocorrências'
+      OnClick = RegistrarOcorrncias1Click
+    end
+    object Remover1: TMenuItem
+      Caption = 'Remover'
+      OnClick = Remover1Click
+    end
+  end
+  object DataSource1: TDataSource
+    left = 160
+    top = 416
+  end
+end
